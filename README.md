@@ -16,7 +16,7 @@ This is a special version to build a docker image for terraform [awspec](https:/
 
 # Dockerfile
 
-https://github.com/alpine-docker/bundler/blob/terraform-awspec/Dockerfile
+https://github.com/alpine-docker/bundle-terraform-awspec/blob/master/Dockerfile
 
 # Public image
 
