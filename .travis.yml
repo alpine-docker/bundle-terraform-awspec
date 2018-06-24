@@ -1,0 +1,12 @@
+sudo: required
+
+services:
+  - docker
+
+language: ruby
+
+rvm:
+  - 2.4.2
+
+script:
+  - bash ./build.sh
