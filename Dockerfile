@@ -1,11 +1,11 @@
-FROM ruby:2.4.2
+FROM ruby:2.6.3
 
 RUN gem install bundler
 COPY Gemfile Gemfile
 RUN bundle install
 
 # Install terraform
-ENV TF_VERSION 0.11.7
+ENV TF_VERSION 0.12.6
 RUN apt-get update && \
     apt-get install -y zip && \
     curl -L https://releases.hashicorp.com/terraform/${TF_VERSION}/terraform_${TF_VERSION}_linux_amd64.zip -o terraform.zip && \
@@ -25,7 +25,7 @@ RUN apt-get update && \
     apt-get install -y kubectl
 
 # Install heptio authenticator
-ENV HEPTIO_VERSION 0.3.0
+ENV HEPTIO_VERSION 0.4.0
 RUN curl -L https://github.com/kubernetes-sigs/aws-iam-authenticator/releases/download/v${HEPTIO_VERSION}/heptio-authenticator-aws_${HEPTIO_VERSION}_linux_amd64 -o heptio-authenticator-aws && \
     chmod +x heptio-authenticator-aws && \
     mv heptio-authenticator-aws /usr/bin/heptio-authenticator-aws
